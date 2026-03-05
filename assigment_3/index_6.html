@@ -1,0 +1,25 @@
+<!-- Create a student object with name, rollNumber, course, marks. Add getResult() to 
+calculate percentage (out of 500) and show Pass/Fail -->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let student = {
+                "name":"Aryan",
+                "rollnum":55,
+                "course":"B.tech",
+                "marks":56,
+
+                getResult : function(){
+                    document.write("percentage = "+ (this.marks/500)*100 +"<br>")
+                    document.write("name "+ this.name+'<br>')
+                    document.write("course "+this.course+"<br>")
+
+                }
+            }
+
+            student.getResult();
+        </script>
+    </body>
+</html>
