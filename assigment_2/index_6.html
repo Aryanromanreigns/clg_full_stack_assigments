@@ -1,0 +1,70 @@
+<!-- Mini Project: Create a complete College webpage using HTML & CSS with headings, 
+paragraphs, image, table, form, links. Use classes, IDs, box model, hover effects. -->
+
+<!DOCTYPE html>
+<html>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        nav{
+            background-color:antiquewhite ;
+        }
+        nav ul{
+            display: flex;
+            list-style:none;
+            gap:55px;
+
+            
+        }
+        nav ul li:hover{
+            color: red;
+            cursor:pointer;
+            text-decoration: underline;
+        }
+        form{
+            display: flex;
+            gap: 5px;
+
+        }
+        h1:nth-child(2){
+            background-color: black;
+            color: white;
+            text-align: center;
+            justify-content: center;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        th{
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+    <body>
+        <h1>college</h1>
+        <nav>
+            <ul>
+                <li >About</li>
+                <li>contact</li>
+            </ul>
+
+        </nav>
+        <h1>About</h1>
+        <p>our college information</p>
+        <image src="" alt="college"></image>
+
+        <table border="3px">
+            <tr><th>course</th> <th>years</th></tr>
+            <tr><td>B.tech</td> <td>4</td></tr>
+        </table>
+
+        <h1>contact</h1>
+        <form >
+            <input type="text" placeholder="enter your name"><input type="text" placeholder="enter your email"><input type="submit">
+        </form>
+
+    </body>
+</html>
