@@ -1,0 +1,24 @@
+<!-- Create an HTML page to explain the use of various predefined functions in window 
+objects in JavaScript -->
+
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Window Object Methods</h2>
+  <button onclick="alert('Hello!')">Alert</button>
+  <button onclick="showConfirm()">Confirm</button>
+  <button onclick="showPrompt()">Prompt</button>
+  <button onclick="window.open('','','width=200,height=100')">Open</button>
+  <p id="out"></p>
+  <script>
+    function showConfirm() {
+      var r = confirm("Agree?");
+      document.getElementById("out").innerText = r ? "Agreed" : "Declined";
+    }
+    function showPrompt() {
+      var n = prompt("Your name?");
+      document.getElementById("out").innerText = "Hello, " + n;
+    }
+  </script>
+</body>
+</html>
