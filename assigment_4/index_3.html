@@ -1,0 +1,26 @@
+<!-- Create an HTML page to change the background color on every click using JavaScript 
+random color generation -->
+
+<!DOCTYPE html>
+<html>
+    <style>
+        h1{
+            background-color: rgb(255,255,255);
+            
+        }
+    </style>
+    <body>
+        <h1 id="h">hello this is aryan kumar </h1>
+        <button id="clr" onclick="changecolor()">change</button>
+        <script>
+            function changecolor(){
+                let r = Math.floor(Math.random()*256)
+                let b = Math.floor(Math.random()*256)
+                let g = Math.floor(Math.random()*256)
+
+                document.getElementById('h').style.backgroundColor= 'rgb('+r+','+g+','+b+')'
+
+            }
+        </script>
+    </body>
+</html>
