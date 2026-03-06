@@ -1,0 +1,31 @@
+<!-- Create an HTML page to explain input/output using a calculator with predefined 
+functions and objects in JavaScript -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>calculator</h1>
+        <input id="a"  placeholder="num1" >
+        <input id="b" placeholder="num2" ><br></br>
+        <h2>operation</h2>
+        <div>
+        <button id="add" onclick="cal('+')">+</button>
+        <button id="sub" onclick="cal('-')">-</button>
+        <button id="mul" onclick="cal('*')">*</button>
+        <button id="divi" onclick="cal('/')">/</button>
+        </div>
+        <p id="ans"></p>
+
+        <script>
+            function cal(op){
+                let a = parseFloat(document.getElementById('a').value);
+                let b = parseFloat(document.getElementById('b').value)
+                let ope = op==='+'?a+b : op==='-'?a-b : op==='*'?a*b : a/b
+
+                document.getElementById('ans').innerHTML = "Result"+ope;
+
+            }
+        </script>
+
+
+    </body>
+</html>
