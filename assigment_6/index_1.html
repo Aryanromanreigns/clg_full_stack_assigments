@@ -1,0 +1,55 @@
+<!-- Form Validation with Exception Handling: Create a Student Registration Form (Name, 
+Email, Age, Password). Validate using try-catch-finally and throw custom errors -->
+
+ <!DOCTYPE html>
+<html>
+    <body>
+        <form onsubmit="return validate()">
+            <input id="name" type="text" placeholder="name">
+            <input id="email" type="text" placeholder="email">
+            <input id="age" type="number" placeholder="age">
+            <input id="pass" type="password" placeholder="password">
+
+            <button> register</button>
+            <p id="msg"></p>
+        </form>
+        <script>
+            function validate(){
+                try{
+                    let name = document.getElementById('name').value;
+                    let email = document.getElementById('email').value;
+                    let age = document.getElementById('age').value;
+                    let password = document.getElementById('pass').value;
+
+                    if(!name){
+                        throw "name is empty"
+                    }
+                    if(!email.includes("@")){
+                        throw "email must have @"
+                    }
+                    if(age<18 || age >30){
+                        throw "age must be in 18-30"
+                    }
+                    if(password.length < 6){
+                        throw "pasword must be atleast of six digit"
+                    }
+
+                    document.getElementById('msg').innerHTML = "sucess";
+                    document.getElementById('msg').style.color = "green";
+                }
+                catch(err){
+                    document.getElementById('msg').innerHTML = "error";
+                    document.getElementById('msg').style.color = "red";
+
+                    console.log(err);
+                    
+                }
+                finally{
+                    console.log("done");
+                }
+            }
+        </script>
+    </body>
+</html> 
+
+
