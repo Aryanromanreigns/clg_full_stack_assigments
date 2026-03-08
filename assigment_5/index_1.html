@@ -1,0 +1,59 @@
+<!-- Date Handling: (a) Display current day and time, (b) Current date in mm-dd-yyyy and dd
+mm-yyyy, (c) Difference between two dates in days, (d) Days passed since year start, (e) 
+1st Jan Sundays between two years, (f) Days until Christmas, (g) Days until birthday. -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="dis"></div>
+    <script>
+        let d = new Date();
+        let current_day = d.getDay();
+        let current_hr = d.getHours();
+        let current_min = d.getMinutes();
+        let current_sec = d.getSeconds();
+        let days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'satuarday'];
+        let day = days[current_day];
+
+        document.getElementById('dis').innerHTML =
+            "current day = " + day + "<br>" +
+            "current time =" + current_hr + ":" + current_min + ":" + current_sec + "<br>";
+
+        let current_date = d.getDate();
+        let current_month = d.getMonth();
+        let current_year = d.getFullYear();
+
+        document.getElementById('dis').innerHTML +=
+            "dd-mm-yyyy = " + current_date + "-" + current_month + "-" + current_year + "<br>"
+
+        document.getElementById('dis').innerHTML +=
+            "mm-dd-yyyy = " + current_month + "-" + current_date + "-" + current_year + "<br>"
+
+        let date1 = new Date("2024-01-01");
+        let date2 = new Date("2024-01-10");
+
+        let diff = (date2 - date1) / (1000 * 60 * 60 * 24);
+
+        document.getElementById('dis').innerHTML +=
+            "Difference between two dates = " + diff + " days<br>";
+
+        let today = new Date();
+        let start = new Date(today.getFullYear(),0,1);
+
+        let days_spend =Math.floor((today - start)) / (1000*60*60*24);
+        document.getElementById('dis').innerHTML +=
+        "days spend = "+days_spend+ "<br>"
+
+
+
+
+
+    </script>
+</body>
+
+</html>

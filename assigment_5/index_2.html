@@ -1,0 +1,51 @@
+<!-- Create a stopwatch with START, PAUSE, and RESET buttons displaying HH:MM:SS using 
+setInterval and clearInterval. -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="d">00:00:00</div>
+        <button id="start" onclick="starttime()">start</button>
+        <button id="pause" onclick="pausetime()">pause</button>
+        <button id="reset" onclick="resettime()">reset</button>
+
+        <script>
+            let sec = 0;
+            let min = 0;
+            let hr = 0;
+            let timer = null;
+
+
+            function starttime(){
+                timer = setInterval(runtimer , 1000)
+            }
+            function runtimer(){
+                sec++;
+                if(sec == 60){
+                    sec = 0;
+                    min++;
+                }
+                if(min == 60){
+                    min = 0;
+                    hr++;
+                }
+                document.getElementById('d').innerHTML=hr+":"+min+":"+sec;
+            }
+
+            function pausetime(){
+                clearInterval(timer);
+            }
+
+            function resettime(){
+                clearInterval(timer);
+                sec = 0;
+                min = 0;
+                hr = 0;
+
+                document.getElementById('d').innerHTML = "00:00:00" 
+            }
+
+        </script>
+
+
+    </body>
+</html>
