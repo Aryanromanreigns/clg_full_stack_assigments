@@ -1,0 +1,76 @@
+<!-- Create an HTML page with combo boxes for month and year to display a calendar for the 
+selected values using JavaScript -->
+
+<!DOCTYPE html>
+<html>
+<style>
+
+</style>
+
+<body>
+    <h1>celender</h1>
+    <select id="mon">
+        <option value="0">jan</option>
+        <option value="1">feb</option>
+        <option value="2">mar</option>
+        <option value="3">april</option>
+        <option value="4">may</option>
+        <option value="5">june</option>
+        <option value="6">july</option>
+        <option value="7">august</option>
+        <option value="8">september</option>
+        <option value="9">octuber</option>
+        <option value="10">november</option>
+        <option value="11">december</option>
+    </select>
+
+    <select id="yea">
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option>2024</option>
+        <option>2025</option>
+        <option>2026</option>
+        <option>2027</option>
+        <option>2028</option>
+        <option>2029</option>
+        <option>2030</option>
+    </select>
+
+    <button id="btn" onclick="show()">show</button>
+    <div id="cle"></div>
+    <script>
+        function show(){
+        let month = +document.getElementById('mon').value;
+        let year = +document.getElementById('yea').value;
+
+        let first_day = new Date(year,month,1).getDay();
+        let last_date = new Date(year,month+1,0).getDate();
+
+        let h = "<table><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>"
+        
+        for(let i = 0; i<first_day;i++){
+            h += "<td>";
+        }
+
+        for(let i=1;i<=last_date;i++){
+            h += "<td>"+i;
+            if((first_day+i)%7 == 0){
+                h += "</tr>";
+            }
+        }
+
+        document.getElementById('cle').innerHTML = h + "</table>";        
+
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
