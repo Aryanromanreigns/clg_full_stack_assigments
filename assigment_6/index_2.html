@@ -1,0 +1,22 @@
+<!-- JSON Creation, Parsing & Display: Create a JSON object (Product ID, Name, Price, In
+Stock), stringify, parse back, display in a div. Use try-catch for errors -->
+
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="out"></div>
+  <script>
+    try{
+      var product={id:101,name:"Laptop",price:55000,inStock:true};
+      var str=JSON.stringify(product);
+      var parsed=JSON.parse(str);
+      document.getElementById("out").innerHTML=
+        "<b>String:</b> "+str+"<br><br>"+
+        "<b>Parsed:</b><br>ID: "+parsed.id+"<br>Name: "+parsed.name+
+        "<br>Price: "+parsed.price+"<br>In Stock: "+parsed.inStock;
+    }catch(e){
+      document.getElementById("out").innerText="Error: "+e.message;
+    }
+  </script>
+</body>
+</html>
